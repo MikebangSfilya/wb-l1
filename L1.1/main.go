@@ -19,7 +19,7 @@ type Action struct {
 
 func (a *Action) TakePill() {
 	if a.sick {
-		fmt.Printf("Taking pills, i am not sick anymore\n")
+		fmt.Printf("Taking pills, %s not sick anymore\n", a.name)
 		a.sick = false
 	} else {
 		fmt.Printf("My name is %s and I am completely healthy.\n", a.name)
@@ -57,5 +57,6 @@ func main() {
 	uma.Say()
 	uma.TakePill()
 	narrator.Say()
+	narrator.TakePill()
 	narrator.TakePill()
 }
