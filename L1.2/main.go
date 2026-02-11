@@ -16,5 +16,9 @@ func main() {
 		}()
 	}
 	wg.Wait()
-	fmt.Println("nums:", nums)
+	fmt.Println("answer:", nums)
+	fmt.Println("also answer:")
+	for _, v := range nums {
+		fmt.Println(v)
+	}
 }
