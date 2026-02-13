@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"math/rand"
+	"os"
 	"os/signal"
 	"sync"
 	"syscall"
@@ -33,7 +34,7 @@ func main() {
 	jobs := make(chan int)
 	wg := &sync.WaitGroup{}
 
-	ctx, cancel := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer cancel()
 
 	workers := flag.Int("workers", 5, "Количество воркеров для выполнения задачи")
