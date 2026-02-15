@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func reverseString(s string) string {
-	srune := []rune(s)
+	runes := []rune(s)
 
-	for i, j := 0, len(srune)-1; i < j; i, j = i+1, j-1 {
-		srune[i], srune[j] = srune[j], srune[i]
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
 	}
-	return string(srune)
+	return string(runes)
 }
 
 func main() {
